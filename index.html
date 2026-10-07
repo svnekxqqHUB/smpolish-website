@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smpolish | Autonomous Software Engineering Agents</title>
+  <meta name="description" content="Smpolish is building next-generation autonomous software engineering agents powered by frontier Claude models. Plan, write, test, debug, and deploy full-stack software with minimal human intervention. Based in Warsaw, Poland.">
+  <meta name="keywords" content="Smpolish, autonomous coding agent, AI software engineer, Claude Agent SDK, Warsaw AI, Poland AI startup, automated development">
+  <meta name="author" content="Smpolish">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smpolish.pl/">
+  <meta property="og:title" content="Smpolish | Autonomous Software Engineering Agents">
+  <meta property="og:description" content="Frontier autonomous software engineering agents built on Claude Agent SDK. Warsaw, Poland.">
+  <meta property="og:image" content="https://smpolish.pl/og-image.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Smpolish | Autonomous AI Software Engineer">
+  <meta name="twitter:description" content="Autonomous software engineering agents powered by Claude. Plan, write, test, debug and deploy full-stack applications.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <!-- Glowing Background Canvas & Gradient Orbs -->
+  <canvas id="bg-canvas" class="background-canvas"></canvas>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="Smpolish Home">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="#131622" stroke="rgba(255, 255, 255, 0.12)"/>
+            <path d="M10 24L17 10L20 16L14 26H26" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="26" cy="12" r="3" fill="#F59E0B"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="10" y1="10" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F59E0B"/>
+                <stop offset="0.5" stop-color="#6366F1"/>
+                <stop offset="1" stop-color="#06B6D4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">smpolish</span>
+          <span class="brand-suffix">.pl</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#features">Features</a>
+        <a href="#workflow">Autonomous Loop</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#company">About Us</a>
+        <a href="#contact" class="nav-cta-btn">Get In Touch</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-outline-glow nav-desktop-cta">Request Access</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-container">
+      
+      <!-- Top Pill Badge -->
+      <div class="badge-pill hero-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Powered by Claude Agent SDK & Computer-Use</span>
+        <span class="badge-tag">Warsaw, PL</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-headline">
+        Autonomous Software <br>
+        <span class="text-gradient">Engineering Agents</span>
+      </h1>
+
+      <p class="hero-subline">
+        Smpolish engineers autonomous agents that utilize frontier Claude models to 
+        <strong>plan, write, test, debug, and deploy</strong> full-stack applications with minimal human intervention.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="hero-actions">
+        <a href="#workflow" class="btn btn-primary-gradient">
+          <span>Watch Autonomous Loop</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary-glass">
+          <span>Schedule Technical Demo</span>
+        </a>
+      </div>
+
+      <!-- Trust Metrics Ribbon -->
+      <div class="trust-ribbon">
+        <div class="trust-item">
+          <span class="trust-num">March 2024</span>
+          <span class="trust-lbl">Founded in Warsaw</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-num">70–80%</span>
+          <span class="trust-lbl">Monthly AI on Claude</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-num">Full-Stack</span>
+          <span class="trust-lbl">Autonomous Lifecycle</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-num">Pre-Seed</span>
+          <span class="trust-lbl">Deep-Tech R&amp;D</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Agent Workflow Terminal -->
+  <section class="section workflow-section" id="workflow">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="sub-badge">Live Demonstration</div>
+        <h2 class="section-title">The 5-Stage Autonomous Execution Cycle</h2>
+        <p class="section-subtitle">
+          Watch how Smpolish orchestrates Claude 3.5 &amp; 3.7 through planning, code synthesis, containerized tests, and self-healing.
+        </p>
+      </div>
+
+      <!-- Workflow Simulator Card -->
+      <div class="simulator-wrapper">
+        <!-- Interactive Controls -->
+        <div class="sim-controls">
+          <div class="sim-presets">
+            <span class="preset-label">Scenario:</span>
+            <button class="preset-btn active" data-scenario="auth">Auth &amp; Rate-Limiter Microservice</button>
+            <button class="preset-btn" data-scenario="worker">Distributed Webhook Pipeline</button>
+            <button class="preset-btn" data-scenario="migration">Zero-Downtime DB Migration</button>
+          </div>
+          <div class="sim-status-indicator">
+            <span class="pulse-dot"></span>
+            <span id="agent-state-label">Agent: Autonomous Orchestration Active</span>
+          </div>
+        </div>
+
+        <!-- Terminal Window -->
+        <div class="terminal-card">
+          <div class="terminal-bar">
+            <div class="window-buttons">
+              <span class="win-btn win-close"></span>
+              <span class="win-btn win-min"></span>
+              <span class="win-btn win-max"></span>
+            </div>
+            <div class="terminal-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <span>smpolish-agent://session-8591a / claude-3-7-sonnet</span>
+            </div>
+            <div class="step-indicator">
+              <span class="step-pill active" id="pill-plan">1. Plan</span>
+              <span class="step-arrow">→</span>
+              <span class="step-pill" id="pill-write">2. Write</span>
+              <span class="step-arrow">→</span>
+              <span class="step-pill" id="pill-test">3. Test</span>
+              <span class="step-arrow">→</span>
+              <span class="step-pill" id="pill-debug">4. Self-Heal</span>
+              <span class="step-arrow">→</span>
+              <span class="step-pill" id="pill-deploy">5. Deploy</span>
+            </div>
+          </div>
+
+          <div class="terminal-body" id="terminal-content">
+            <!-- Content will be dynamically typed or updated by JavaScript -->
+            <pre class="terminal-code"><code id="code-stream"></code></pre>
+          </div>
+
+          <div class="terminal-footer">
+            <div class="telemetry">
+              <span>Model: <strong>Claude 3.7 Sonnet (Hybrid Reasoning)</strong></span>
+              <span>Memory Context: <strong>142k / 200k tokens</strong></span>
+              <span>Sandbox: <strong>Isolated Docker (Debian 12)</strong></span>
+            </div>
+            <div class="sim-play-controls">
+              <button class="btn btn-sm btn-ghost" id="sim-replay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                Replay Run
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Capabilities Grid -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="sub-badge">Core Engine</div>
+        <h2 class="section-title">Engineered For Zero Boilerplate &amp; High Reliability</h2>
+        <p class="section-subtitle">
+          Unlike simple autocomplete tools, Smpolish behaves as a senior autonomous teammate capable of full project context exploration and validation.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper icon-amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="feature-title">Claude Agent SDK Native</h3>
+          <p class="feature-desc">
+            Deeply integrated with Anthropic's Claude Agent SDK, employing advanced tool-calling paradigms, dynamic scratchpads, and token-efficient prompt caching.
+          </p>
+          <div class="feature-tag">Anthropic Frontier Stack</div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper icon-indigo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3 class="feature-title">Computer-Use &amp; UI Inspection</h3>
+          <p class="feature-desc">
+            Autonomous visual regression validation. The agent opens headless browsers, clicks buttons, examines layouts, and validates frontend states like a human QA engineer.
+          </p>
+          <div class="feature-tag">Visual Verification</div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper icon-cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3 class="feature-title">Self-Healing Reflection Loop</h3>
+          <p class="feature-desc">
+            When tests fail or linter errors occur, Smpolish isolates the root cause, parses stack traces, writes surgical patches, and re-executes tests until 100% green.
+          </p>
+          <div class="feature-tag">Zero Regression</div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper icon-emerald">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3 class="feature-title">Sandboxed Zero-Leakage Security</h3>
+          <p class="feature-desc">
+            Deterministic, containerized execution environments. Code never executes on unverified infrastructure; API keys and database credentials are fully scrubbed.
+          </p>
+          <div class="feature-tag">Enterprise Hardened</div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper icon-purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <h3 class="feature-title">Full-Stack Synthesis</h3>
+          <p class="feature-desc">
+            Seamlessly coordinates schema migrations (Postgres/Redis), backend endpoints (Node, Python, Go, Rust), and modern frontends (React, Next.js, Vue).
+          </p>
+          <div class="feature-tag">Polyglot Architecture</div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper icon-rose">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <h3 class="feature-title">Human-in-the-Loop Checkpoints</h3>
+          <p class="feature-desc">
+            Total control when you need it. High-risk actions like production deployments or destructive schema alterations require 1-click human verification.
+          </p>
+          <div class="feature-tag">Configurable Autonomy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Architecture Diagram -->
+  <section class="section arch-section" id="architecture">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="sub-badge">Deep Tech</div>
+        <h2 class="section-title">Autonomous Agent System Architecture</h2>
+        <p class="section-subtitle">
+          How Smpolish connects frontier reasoning models to deterministic developer tooling.
+        </p>
+      </div>
+
+      <div class="arch-box">
+        <div class="arch-flow">
+          
+          <div class="arch-step">
+            <div class="arch-step-header">
+              <span class="step-num">01</span>
+              <h4>Task Specification</h4>
+            </div>
+            <p>User issue, PR description, or high-level architecture requirement.</p>
+            <div class="arch-pill">Natural Language / Jira / GitHub</div>
+          </div>
+
+          <div class="arch-arrow">→</div>
+
+          <div class="arch-step highlight-step">
+            <div class="arch-step-header">
+              <span class="step-num">02</span>
+              <h4>Claude Reasoning Engine</h4>
+            </div>
+            <p>Claude 3.7 / 3.5 Sonnet performs dependency mapping, code search &amp; task decomposition.</p>
+            <div class="arch-pill highlight-pill">Agent SDK + Extended Thinking</div>
+          </div>
+
+          <div class="arch-arrow">→</div>
+
+          <div class="arch-step">
+            <div class="arch-step-header">
+              <span class="step-num">03</span>
+              <h4>Execution Sandbox</h4>
+            </div>
+            <p>Isolated Docker containers compile code, run tests, and spin up browser QA bots.</p>
+            <div class="arch-pill">Computer-Use + Headless CLI</div>
+          </div>
+
+          <div class="arch-arrow">→</div>
+
+          <div class="arch-step">
+            <div class="arch-step-header">
+              <span class="step-num">04</span>
+              <h4>Verified Production PR</h4>
+            </div>
+            <p>Unit &amp; E2E tests passing, clean git commit history, and automated staging preview.</p>
+            <div class="arch-pill">Clean Git Diff + CI/CD Green</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Smpolish & Company Info -->
+  <section class="section company-section" id="company">
+    <div class="container">
+      <div class="company-card">
+        <div class="company-grid">
+          
+          <div class="company-content">
+            <div class="sub-badge">About Smpolish</div>
+            <h2 class="company-heading">Pioneering Autonomous Engineering in Warsaw, Poland</h2>
+            <p class="company-text">
+              Founded in <strong>March 2024</strong> in Warsaw, Smpolish is an AI deep-tech company building the infrastructure for autonomous software creation.
+            </p>
+            <p class="company-text">
+              We believe the next era of computing will not just assist developers with snippets, but empower teams with tireless, high-precision autonomous agents that can take a 20-page technical spec and reliably deliver a tested, secure, and production-ready system.
+            </p>
+            <p class="company-text">
+              With 70–80% of our monthly AI budget dedicated to Anthropic’s frontier models, we are actively participating in the Claude Agent ecosystem to push the boundaries of what autonomous coding agents can achieve.
+            </p>
+
+            <div class="company-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-val">Warsaw, Poland 🇵🇱</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Founded</span>
+                <span class="meta-val">March 2024</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Stage</span>
+                <span class="meta-val">Pre-seed / Bootstrapped</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Focus</span>
+                <span class="meta-val">Autonomous Software Agents</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="company-aside">
+            <div class="aside-box">
+              <div class="aside-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+              </div>
+              <h3>Anthropic Ecosystem</h3>
+              <p>
+                Building on the Claude Agent SDK, leveraging computer-use, structured tool orchestration, and multi-turn agentic workflows.
+              </p>
+              <div class="aside-divider"></div>
+              <div class="contact-pill-list">
+                <div class="contact-pill-item">
+                  <span class="dot-live"></span>
+                  <span>Domain &amp; Mail: <strong>smpolish.pl</strong></span>
+                </div>
+                <div class="contact-pill-item">
+                  <span class="dot-live"></span>
+                  <span>Hosted &amp; Protected on OVH</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Request Access Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container contact-container">
+      <div class="section-header text-center">
+        <div class="sub-badge">Get In Touch</div>
+        <h2 class="section-title">Request Early Access &amp; Partnership</h2>
+        <p class="section-subtitle">
+          Whether you represent an enterprise engineering team, an investor, or an AI research partner, we would love to connect.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name">Your Name</label>
+              <input type="text" id="form-name" placeholder="Filip / Engineering Lead" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Work Email</label>
+              <input type="email" id="form-email" placeholder="you@company.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-company">Company / Organization</label>
+              <input type="text" id="form-company" placeholder="e.g. AI Lab, Enterprise, VC" required>
+            </div>
+            <div class="form-group">
+              <label for="form-role">Inquiry Type</label>
+              <select id="form-role">
+                <option value="Enterprise Pilot">Enterprise Autonomous Agent Pilot</option>
+                <option value="Anthropic / AI Ecosystem">Anthropic / AI Ecosystem Partner</option>
+                <option value="Investor / Funding">Investor / Funding Inquiry</option>
+                <option value="Developer Early Access">Developer Early Access</option>
+                <option value="General Inquiry">General Technical Question</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="form-msg">Project Details or Inquiry</label>
+            <textarea id="form-msg" rows="4" placeholder="Tell us about your engineering stack, challenges, or partnership ideas..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary-gradient btn-block">
+              <span>Send Message to Smpolish Team</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </div>
+
+          <div class="form-status" id="form-status" style="display: none;"></div>
+        </form>
+
+        <div class="direct-contact-bar">
+          <span>Prefer direct email? Reach out at:</span>
+          <a href="mailto:contact@smpolish.pl" class="direct-email-link">contact@smpolish.pl</a>
+          <span class="direct-divider">·</span>
+          <span>Warsaw, Poland</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <div class="logo-icon small">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="10" fill="#131622" stroke="rgba(255, 255, 255, 0.12)"/>
+              <path d="M10 24L17 10L20 16L14 26H26" stroke="url(#footer-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="26" cy="12" r="3" fill="#F59E0B"/>
+              <defs>
+                <linearGradient id="footer-grad" x1="10" y1="10" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#F59E0B"/>
+                  <stop offset="0.5" stop-color="#6366F1"/>
+                  <stop offset="1" stop-color="#06B6D4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="footer-title">Smpolish.pl</span>
+        </div>
+        <p class="footer-copy">
+          &copy; 2024–2026 Smpolish. All rights reserved. <br>
+          Autonomous software engineering agents for mission-critical software. Warsaw, Poland.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-status">
+          <span class="pulse-indicator"></span>
+          <span>All Agent Services Operational</span>
+        </div>
+        <div class="footer-links">
+          <a href="#features">Features</a>
+          <a href="#workflow">Autonomous Workflow</a>
+          <a href="#company">Company</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
